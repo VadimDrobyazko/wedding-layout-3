@@ -1,0 +1,18 @@
+.bottom__gradient {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 560px;
+  height: 148px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 206, 234, 1),
+    rgba(0, 206, 234, 0.9) 25%,
+    transparent 148px
+  );
+
+  pointer-events: none;
+}

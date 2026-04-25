@@ -1,0 +1,90 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-white);
+  padding: 0 1.5rem;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-white);
+}
+
+
+.names {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 18vw, 16rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+.initial {
+  font-style: italic;
+  display: block;
+}
+
+.ampersand {
+  font-style: normal;
+  color: var(--color-beige);
+  font-size: 0.45em;
+  opacity: 0.8;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0 auto 1rem;
+}
+
+.date {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+  opacity: 0.9;
+}
+
+.city {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.65;
+}

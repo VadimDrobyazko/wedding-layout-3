@@ -1,0 +1,126 @@
+.top__left {
+  position: absolute;
+  top: -25px;
+  left: -40px;
+  width: 142px;
+  height: 77px;
+
+  background: url('/src/assets/bg-gif/4.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: skewX(5deg) rotate(-35deg) rotateX(-45deg);
+
+  pointer-events: none;
+}
+
+.top__right {
+  position: absolute;
+  top: -22px;
+  right: -40px;
+  width: 182px;
+  height: 100px;
+
+  background: url('/src/assets/bg-gif/1.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: rotate(-160deg) skewX(-10deg);
+
+  pointer-events: none;
+}
+
+.center__left {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  width: 129px;
+  height: 71px;
+
+  background: url('/src/assets/bg-gif/6.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: rotate(-10deg) skewX(-30deg);
+
+  pointer-events: none;
+}
+
+.center__right {
+  position: absolute;
+  top: 27%;
+  right: 17%;
+  width: 129px;
+  height: 71px;
+
+  background: url('/src/assets/bg-gif/2.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: rotate(-10deg) skewX(25deg);
+
+  pointer-events: none;
+}
+
+.center__right_bottom {
+  position: absolute;
+  top: 50%;
+  right: -45px;
+  width: 129px;
+  height: 71px;
+
+  background: url('/src/assets/bg-gif/7.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: rotate(20deg) skewX(-35deg);
+
+  pointer-events: none;
+}
+
+.bottom__center {
+  position: absolute;
+  bottom: 9%;
+  right: 25%;
+  width: 159px;
+  height: 87px;
+
+  background: url('/src/assets/bg-gif/3.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: rotate(25deg) skewX(-20deg);
+
+  pointer-events: none;
+}
+
+.bottom__left {
+  position: absolute;
+  bottom: 21%;
+  left: -15%;
+  width: 246px;
+  height: 135px;
+
+  background: url('/src/assets/bg-gif/1.gif');
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: contain;
+  transform: rotate(15deg) skewX(-25deg);
+
+  pointer-events: none;
+}
+.bottom__gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  z-index: 50;
+
+  width: 100%;
+  height: 128px;
+
+  background: linear-gradient(3deg, #b0f654 36.49%, rgba(179, 246, 88, 0) 97.97%) bottom center/
+    100% 128px no-repeat;
+
+  pointer-events: none;
+}

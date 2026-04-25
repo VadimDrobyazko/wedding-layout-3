@@ -1,0 +1,90 @@
+.section {
+  padding: 6rem 2rem;
+  background: var(--color-beige);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.inner.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-brown);
+  margin: 0 0 1.5rem;
+}
+
+.divider {
+  width: 50px;
+  height: 1px;
+  background: var(--color-taupe);
+  margin: 0 auto 2rem;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 400;
+  color: var(--color-brown);
+  margin: 0 0 0.75rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--color-brown-light);
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.details {
+  margin: 0 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.detailLabel {
+  color: var(--color-taupe);
+  font-weight: 500;
+}
+
+.detailValue {
+  color: var(--color-brown);
+  margin: 0;
+}
+
+.mapWrapper {
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+}
+
+.mapWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

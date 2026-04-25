@@ -1,0 +1,75 @@
+.footer {
+  padding: 6rem 2rem;
+  background: var(--color-brown);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.inner.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-cream);
+  margin: 0 0 1.25rem;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-taupe);
+  margin: 0 auto 2rem;
+}
+
+.role {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-taupe);
+  margin: 0 0 0.75rem;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 300;
+  color: var(--color-white);
+  margin: 0 0 0.75rem;
+}
+
+.phone {
+  display: inline-block;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  letter-spacing: 0.08em;
+  color: var(--color-beige);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s ease;
+}
+
+.phone:hover {
+  color: var(--color-white);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--color-taupe);
+  line-height: 1.6;
+  margin: 0;
+}

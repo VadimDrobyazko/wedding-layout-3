@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "semi": false,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "trailingComma": "all",
+  "jsxSingleQuote": true,
+  "bracketSpacing": true
+}
