@@ -1,0 +1,6 @@
+name = "wedding-layout-3"
+compatibility_date = "2024-09-23"
+
+[assets]
+directory = "./build"
+not_found_handling = "single-page-application"
