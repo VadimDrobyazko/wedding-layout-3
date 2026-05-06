@@ -1,21 +1,29 @@
 import Hero from '../components/Hero/Hero'
-import Countdown from '../components/Countdown/Countdown'
-import WaitingYou from '../components/WaitingYou/WaitingYou'
+import MapSection from '../components/MapSection/MapSection'
 import Looks from '../components/Looks/Looks'
 import Timing from '../components/Timing/Timing'
-import MapSection from '../components/MapSection/MapSection'
 import Organizer from '../components/Organizer/Organizer'
+import Story from '../components/Story/Story'
+import Countdown from '../components/Countdown/Countdown'
+import WaitingYou from '../components/WaitingYou/WaitingYou'
+import styles from './Home.module.css'
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Countdown />
-      <WaitingYou />
+      <MapSection />
       <Looks />
       <Timing />
-      <MapSection />
       <Organizer />
+      <div
+        className={styles.storyBlock}
+        style={{ backgroundImage: "url('/images/background.webp')" }}
+      >
+        <Story />
+        <Countdown />
+      </div>
+      <WaitingYou />
     </main>
   )
 }

@@ -13,11 +13,22 @@ const config = {
   waitingYou: {
     photo: 'demo/couple.jpg',
   },
+  story: [
+    { year: '2022', text: 'Перша зустріч на студентській вечірці — ми танцювали до світанку і вже тоді знали, що це щось особливе.' },
+    { year: '2023', text: 'Перша спільна подорож до Львова. Кава, бруківка і усвідомлення, що хочемо бути поруч завжди.' },
+    { year: '2025', text: 'Заручини на березі Дніпра на світанку. Він сказав «виходь за мене» — вона сказала «так».' },
+    { year: '2026', text: 'Ми одружуємося. Дякуємо, що ви з нами в цей найважливіший день нашого життя.' },
+  ],
   dresscode: {
-    hint: 'Ми будемо раді бачити вас у вбранні в теплих тонах',
+    hint: '',
     description:
-      'Наша палітра — це відтінки піску, молочного, бежевого та теракоти. Уникайте яскравих кольорів та білого — залиште білий для нареченої.',
-    palette: ['#FFFFFF', '#F5F2EE', '#E6DED4', '#CDBBA8', '#A4876A', '#6B4F3A'],
+      'Нам буде дуже приємно, якщо ви підтримаєте кольорову гаму та дрес-код нашого весілля.',
+    colors: [
+      { name: 'Blue',  img: '/images/dresscode/blue.webp',     textColor: '#ffffff' },
+      { name: 'Gold',  img: '/images/dresscode/gold.webp',     textColor: '#ffffff' },
+      { name: 'Pink',  img: '/images/dresscode/pink.webp',     textColor: '#6b4f3a' },
+      { name: 'Ivory', img: '/images/dresscode/white-v2.webp', textColor: '#6b4f3a' },
+    ],
   },
   timeline: [
     { time: '13:00', event: 'Збір гостей', sub: 'Реєстрація та привітання', isDim: false },
@@ -27,19 +38,21 @@ const config = {
     { time: '20:00', event: 'Танці', sub: 'Вечірня програма', isDim: false },
   ],
   venue: {
-    name: 'Назва ресторану',
+    name: 'Villa Riviera',
     description: 'Вишуканий ресторан у центрі міста',
     details: [
       { label: 'Адреса', value: 'вул. Прикладна, 1, Київ' },
       { label: 'Паркінг', value: 'Безкоштовний поруч' },
     ],
+    mapLink: 'https://maps.google.com',
     mapIframe: '',
   },
   organizer: {
     name: 'Марія',
     phone: '+380 XX XXX XX XX',
     role: 'Організатор свята',
-    note: 'З усіх питань звертайтесь до організатора',
+    note: 'Усі важливі деталі та фотографії будуть у нашому спільному чаті',
+    telegramGroup: 'https://t.me/+example',
   },
 }
 

@@ -1,6 +1,7 @@
 # Wedding Invite — Project Guide
 
 ## What this is
+
 Multi-client wedding landing page. One repo, one Cloudflare deployment. Each client gets their own URL: `wedding-invite.com/anya-vlad`.
 
 ## Adding a new client
@@ -54,12 +55,14 @@ src/
 ## Code style
 
 **Naming:**
+
 - Folders & component files: `PascalCase`
 - Hooks: `camelCase` with `use` prefix
 - Config files: `camelCase` (`wedding.config.ts`)
 - Client slugs: `kebab-case` (`anya-vlad`)
 
 **Components:**
+
 ```ts
 // Simple component — function declaration
 export default function Hero() {
@@ -74,31 +77,36 @@ export default Card
 ```
 
 **Import order:**
+
 ```ts
-import { useState } from 'react'                        // 1. React
-import { useNavigate } from 'react-router-dom'          // 2. Third-party
-import styles from './Component.module.css'             // 3. Styles
-import { useWeddingConfig } from '@context/...'         // 4. Aliases
+import { useState } from 'react' // 1. React
+import { useNavigate } from 'react-router-dom' // 2. Third-party
+import styles from './Component.module.css' // 3. Styles
+import { useWeddingConfig } from '@context/...' // 4. Aliases
 ```
 
 **CSS Modules — conditional classes:**
+
 ```ts
 className={`${styles.block} ${condition ? styles.blockActive : ''}`}
 ```
 
 **TypeScript:**
+
 - `type` over `interface` for props
 - `as const` for literal union values: `category: 'women' as const`
 - Types derived from data: `export type WeddingConfig = typeof config`
 - No explicit return types on components
 
 **Keys in lists:** use domain field, not index:
+
 ```ts
 {timeline.map((ev) => <li key={ev.time}>)}  // ✓
 {items.map((_, i) => <div key={i}>)}        // ✗
 ```
 
 **Scroll reveal:** use `useReveal` hook — returns a callback ref:
+
 ```ts
 const ref = useReveal(styles.visible)
 // pass to elements in map — same ref works for multiple elements
@@ -111,22 +119,37 @@ const ref = useReveal(styles.visible)
 
 ## Path aliases
 
-| Alias | Points to |
-|---|---|
-| `@config/*` | `src/config/*` |
+| Alias        | Points to       |
+| ------------ | --------------- |
+| `@config/*`  | `src/config/*`  |
 | `@context/*` | `src/context/*` |
 | `@clients/*` | `src/clients/*` |
-| `@utils/*` | `src/utils/*` |
+| `@utils/*`   | `src/utils/*`   |
 | `@modules/*` | `src/modules/*` |
 | `@layouts/*` | `src/layouts/*` |
-| `@hooks/*` | `src/hooks/*` |
-| `@router/*` | `src/router/*` |
+| `@hooks/*`   | `src/hooks/*`   |
+| `@router/*`  | `src/router/*`  |
 
 ## Env variables
 
-| Variable | Where | Value |
-|---|---|---|
+| Variable               | Where                           | Value                |
+| ---------------------- | ------------------------------- | -------------------- |
 | `REACT_APP_PHOTOS_URL` | `.env.local` + Cloudflare Pages | R2 public bucket URL |
+
+## Page sections — canonical order
+
+Order sections follow this sequence (skip missing ones, don't reorder the rest):
+
+| #   | Section          | Component    | Status       | Notes                                          |
+| --- | ---------------- | ------------ | ------------ | ---------------------------------------------- |
+| 1   | Головна          | `Hero`       | ✅ exists    | Couple photo or wedding photo, names + date    |
+| 2   | Локація          | `MapSection` | ✅ exists    | Venue name, address, map iframe                |
+| 3   | Дрес-код         | `Looks`      | ✅ exists    | Palette, outfit examples                       |
+| 4   | Тайминг          | `Timing`     | ✅ exists    | Day schedule timeline                          |
+| 5   | Information      | —            | ❌ not built | Telegram group link + coordinator phone number |
+| 6   | Питання          | `Organizer`  | ✅ exists    | Organizer name/phone/note                      |
+| 7   | Love Story       | `Story`      | ✅ exists    | Story chapters with photos                     |
+| 8   | Зворотній відлік | —            | ❌ not built | Countdown timer to wedding start               |
 
 ## Build & deploy
 

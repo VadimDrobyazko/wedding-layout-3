@@ -1,5 +1,5 @@
 .section {
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
   background: var(--color-beige);
   display: flex;
   justify-content: center;
@@ -22,13 +22,10 @@
 }
 
 .heading {
-  font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 300;
-  font-style: italic;
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 7vw, 6.5rem);
   color: var(--color-brown);
   margin: 0 0 1.5rem;
-  letter-spacing: 0.03em;
 }
 
 .divider {

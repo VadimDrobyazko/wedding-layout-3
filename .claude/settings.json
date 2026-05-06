@@ -4,7 +4,11 @@
       "Bash(npm run *)",
       "Bash(git init *)",
       "Bash(git remote *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(Get-ChildItem \"f:\\\\Wedding\\\\wedding-layout-3-minimal\\\\src\\\\modules\\\\Home\\\\components\" -Directory)",
+      "Bash(Select-Object Name)"
     ]
   }
 }

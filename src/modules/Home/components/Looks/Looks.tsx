@@ -4,28 +4,28 @@ import styles from './Looks.module.css'
 
 export default function Looks() {
   const { dresscode } = useWeddingConfig()
-  const ref = useReveal(styles.visible)
+  const headingRef = useReveal(styles.visible)
+  const cardRef = useReveal(styles.visible)
 
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <h2 ref={ref} className={styles.heading}>
+        <h2 ref={headingRef} className={styles.heading}>
           Дрес-код
         </h2>
         <div className={styles.divider} aria-hidden='true' />
-        <p className={styles.hint}>{dresscode.hint}</p>
-        <p className={styles.description}>{dresscode.description}</p>
-        <div className={styles.palette} aria-label='Кольорова палітра'>
-          {dresscode.palette.map((color) => (
-            <span
-              key={color}
-              className={styles.swatch}
-              style={{ backgroundColor: color }}
-              title={color}
-              aria-label={color}
-            />
-          ))}
-        </div>
+        {dresscode.hint && <p className={styles.hint}>{dresscode.hint}</p>}
+        {dresscode.description && (
+          <p className={styles.description}>{dresscode.description}</p>
+        )}
+      </div>
+      <div className={styles.colors}>
+        {dresscode.colors.map((item) => (
+          <div key={item.name} ref={cardRef} className={styles.card}>
+            <img className={styles.cardImg} src={item.img} alt={item.name} />
+            <span className={styles.cardName} style={{ color: item.textColor }}>{item.name}</span>
+          </div>
+        ))}
       </div>
     </section>
   )

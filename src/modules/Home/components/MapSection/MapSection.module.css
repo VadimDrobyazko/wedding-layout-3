@@ -1,14 +1,33 @@
 .section {
-  padding: 6rem 2rem;
-  background: var(--color-beige);
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-beige);
+  opacity: 0.88;
+  z-index: 1;
 }
 
 .inner {
   max-width: 720px;
   width: 100%;
   text-align: center;
+  position: relative;
+  z-index: 2;
   opacity: 0;
   transform: translateY(24px);
   transition:
@@ -22,10 +41,8 @@
 }
 
 .heading {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 300;
-  font-style: italic;
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   color: var(--color-brown);
   margin: 0 0 1.5rem;
 }
@@ -47,7 +64,7 @@
 
 .description {
   font-size: 0.95rem;
-  color: var(--color-brown-light);
+  color: var(--color-brown);
   margin: 0 0 2rem;
   line-height: 1.6;
 }
@@ -67,13 +84,37 @@
 }
 
 .detailLabel {
-  color: var(--color-taupe);
+  color: var(--color-brown-light);
   font-weight: 500;
 }
 
 .detailValue {
   color: var(--color-brown);
   margin: 0;
+}
+
+.mapButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--color-taupe);
+  color: var(--color-brown);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mapButton:hover {
+  background: var(--color-brown);
+  border-color: var(--color-brown);
+  color: var(--color-cream);
 }
 
 .mapWrapper {

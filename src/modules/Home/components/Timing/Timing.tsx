@@ -13,23 +13,35 @@ export default function Timing() {
         <h2 ref={headingRef} className={styles.heading}>
           Програма дня
         </h2>
-        <div className={styles.divider} aria-hidden='true' />
         <ol className={styles.timeline}>
-          {timeline.map((item, i) => (
-            <li
-              key={item.time}
-              ref={itemRef}
-              className={`${styles.item} ${item.isDim ? styles.dim : ''}`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              <span className={styles.time}>{item.time}</span>
-              <div className={styles.dot} aria-hidden='true' />
-              <div className={styles.eventInfo}>
+          {timeline.map((item, i) => {
+            const isLeft = i % 2 === 0
+            const content = (
+              <>
+                <span className={styles.time}>{item.time}</span>
                 <span className={styles.eventName}>{item.event}</span>
                 {item.sub && <span className={styles.sub}>{item.sub}</span>}
-              </div>
-            </li>
-          ))}
+              </>
+            )
+            return (
+              <li
+                key={item.time}
+                ref={itemRef}
+                className={`${styles.item} ${item.isDim ? styles.dim : ''}`}
+                style={{ transitionDelay: `${i * 0.12}s` }}
+              >
+                <div className={`${styles.cell} ${styles.cellLeft}`}>
+                  {isLeft && content}
+                </div>
+                <div className={styles.center} aria-hidden='true'>
+                  <div className={styles.dot} />
+                </div>
+                <div className={`${styles.cell} ${styles.cellRight}`}>
+                  {!isLeft && content}
+                </div>
+              </li>
+            )
+          })}
         </ol>
       </div>
     </section>

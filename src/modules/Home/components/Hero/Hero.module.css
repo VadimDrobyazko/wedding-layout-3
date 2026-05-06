@@ -1,3 +1,33 @@
+@keyframes heroFromLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes heroFromRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes heroAmpersand {
+  from { opacity: 0; transform: scale(0.4) rotate(-8deg); }
+  to   { opacity: 0.8; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes heroSlideUpFull {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroSlideUpDate {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 0.9; transform: translateY(0); }
+}
+
+@keyframes heroSlideUpCity {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 0.65; transform: translateY(0); }
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -57,6 +87,15 @@
 .initial {
   font-style: italic;
   display: block;
+  will-change: transform, opacity;
+}
+
+.names > span:first-child {
+  animation: heroFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.names > span:last-child {
+  animation: heroFromRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .ampersand {
@@ -64,6 +103,8 @@
   color: var(--color-beige);
   font-size: 0.45em;
   opacity: 0.8;
+  will-change: transform, opacity;
+  animation: heroAmpersand 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both;
 }
 
 .divider {
@@ -71,6 +112,7 @@
   height: 1px;
   background: rgba(255, 255, 255, 0.4);
   margin: 0 auto 1rem;
+  animation: heroSlideUpFull 0.6s ease-out 1.05s both;
 }
 
 .date {
@@ -79,6 +121,7 @@
   text-transform: uppercase;
   margin: 0 0 0.4rem;
   opacity: 0.9;
+  animation: heroSlideUpDate 0.6s ease-out 1.2s both;
 }
 
 .city {
@@ -87,4 +130,16 @@
   text-transform: uppercase;
   margin: 0;
   opacity: 0.65;
+  animation: heroSlideUpCity 0.6s ease-out 1.35s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .names > span:first-child,
+  .names > span:last-child,
+  .ampersand,
+  .divider,
+  .date,
+  .city {
+    animation: none;
+  }
 }
