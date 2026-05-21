@@ -8,7 +8,10 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(Get-ChildItem \"f:\\\\Wedding\\\\wedding-layout-3-minimal\\\\src\\\\modules\\\\Home\\\\components\" -Directory)",
-      "Bash(Select-Object Name)"
+      "Bash(Select-Object Name)",
+      "Bash(Get-ChildItem -Path \"f:\\\\Wedding\\\\wedding-layout-3-minimal\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Remove-Item \"f:\\\\Wedding\\\\wedding-layout-3-minimal\\\\src\\\\utils\\\\fetchWedding.ts\", \"f:\\\\Wedding\\\\wedding-layout-3-minimal\\\\src\\\\utils\\\\apiToConfig.ts\", \"f:\\\\Wedding\\\\wedding-layout-3-minimal\\\\src\\\\modules\\\\Home\\\\page\\\\PageLoader.tsx\", \"f:\\\\Wedding\\\\wedding-layout-3-minimal\\\\src\\\\modules\\\\Home\\\\page\\\\PageLoader.module.css\")"
     ]
   }
 }

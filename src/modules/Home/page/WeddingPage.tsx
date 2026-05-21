@@ -5,8 +5,10 @@ import Home from './Home'
 
 export default function WeddingPage() {
   const { slug } = useParams<{ slug: string }>()
-  const config = slug ? clients[slug] : undefined
 
+  if (!slug) return <Navigate to='/demo' replace />
+
+  const config = clients[slug]
   if (!config) return <Navigate to='/demo' replace />
 
   return (
