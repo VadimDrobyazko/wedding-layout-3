@@ -15,3 +15,9 @@ dist/
 .env
 
 build/
+
+# MCP config (contains API tokens)
+.mcp.json
+
+# Docs
+*.md
