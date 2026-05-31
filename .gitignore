@@ -19,5 +19,8 @@ build/
 # MCP config (contains API tokens)
 .mcp.json
 
+# Claude Code (contains API tokens and local settings)
+.claude/
+
 # Docs
 *.md
