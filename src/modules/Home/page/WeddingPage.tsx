@@ -5,10 +5,11 @@ import Home from './Home'
 
 export default function WeddingPage() {
   const { slug } = useParams<{ slug: string }>()
+  const effectiveSlug = /^v\d+$/.test(slug ?? '') ? 'demo' : slug
 
-  if (!slug) return <Navigate to='/demo' replace />
+  if (!effectiveSlug) return <Navigate to='/demo' replace />
 
-  const config = clients[slug]
+  const config = clients[effectiveSlug]
   if (!config) return <Navigate to='/demo' replace />
 
   return (
