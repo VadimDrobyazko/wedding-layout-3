@@ -1,4 +1,5 @@
 export function photoUrl(path: string): string {
-  const base = (process.env.REACT_APP_PHOTOS_URL ?? '').replace(/\/$/, '')
-  return `${base}/${path}`
+  if (!path) return ''
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('/')) return path
+  return `/${path}`
 }

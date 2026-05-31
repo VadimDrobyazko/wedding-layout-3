@@ -11,7 +11,7 @@ const config = {
     weddingDate: '2026-09-07T14:00:00',
   },
   waitingYou: {
-    photo: 'demo/couple.jpg',
+    photo: '/images/background.webp',
   },
   story: [
     { year: '2022', text: 'Перша зустріч на студентській вечірці — ми танцювали до світанку і вже тоді знали, що це щось особливе.' },
