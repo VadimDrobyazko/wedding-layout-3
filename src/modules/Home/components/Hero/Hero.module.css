@@ -70,7 +70,6 @@
   color: var(--color-white);
 }
 
-
 .names {
   font-family: var(--font-heading);
   font-size: clamp(5rem, 18vw, 16rem);
@@ -84,27 +83,20 @@
   gap: 0.25em;
 }
 
+/* ── default: hidden until page-loaded ── */
+
 .initial {
-  font-style: italic;
   display: block;
+  opacity: 0;
   will-change: transform, opacity;
-}
-
-.names > span:first-child {
-  animation: heroFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
-}
-
-.names > span:last-child {
-  animation: heroFromRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .ampersand {
   font-style: normal;
   color: var(--color-beige);
   font-size: 0.45em;
-  opacity: 0.8;
+  opacity: 0;
   will-change: transform, opacity;
-  animation: heroAmpersand 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both;
 }
 
 .divider {
@@ -112,7 +104,7 @@
   height: 1px;
   background: rgba(255, 255, 255, 0.4);
   margin: 0 auto 1rem;
-  animation: heroSlideUpFull 0.6s ease-out 1.05s both;
+  opacity: 0;
 }
 
 .date {
@@ -120,8 +112,7 @@
   letter-spacing: 0.25em;
   text-transform: uppercase;
   margin: 0 0 0.4rem;
-  opacity: 0.9;
-  animation: heroSlideUpDate 0.6s ease-out 1.2s both;
+  opacity: 0;
 }
 
 .city {
@@ -129,17 +120,45 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
-  opacity: 0.65;
-  animation: heroSlideUpCity 0.6s ease-out 1.35s both;
+  opacity: 0;
 }
 
+/* ── trigger after loader leaves ── */
+
+:global(body.page-loaded) .names > span:first-child {
+  animation: heroFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+:global(body.page-loaded) .names > span:last-child {
+  animation: heroFromRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+:global(body.page-loaded) .ampersand {
+  animation: heroAmpersand 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both;
+}
+
+:global(body.page-loaded) .divider {
+  animation: heroSlideUpFull 0.6s ease-out 0.9s both;
+}
+
+:global(body.page-loaded) .date {
+  animation: heroSlideUpDate 0.6s ease-out 1.05s both;
+}
+
+:global(body.page-loaded) .city {
+  animation: heroSlideUpCity 0.6s ease-out 1.2s both;
+}
+
+/* ── reduced motion ── */
+
 @media (prefers-reduced-motion: reduce) {
-  .names > span:first-child,
-  .names > span:last-child,
-  .ampersand,
-  .divider,
-  .date,
-  .city {
+  :global(body.page-loaded) .initial,
+  :global(body.page-loaded) .ampersand,
+  :global(body.page-loaded) .divider,
+  :global(body.page-loaded) .date,
+  :global(body.page-loaded) .city {
     animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

@@ -5,7 +5,7 @@ import Timing from '../components/Timing/Timing'
 import Organizer from '../components/Organizer/Organizer'
 import Story from '../components/Story/Story'
 import Countdown from '../components/Countdown/Countdown'
-import WaitingYou from '../components/WaitingYou/WaitingYou'
+import Footer from '@layouts/components/Footer/Footer'
 import styles from './Home.module.css'
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
         <Story />
         <Countdown />
       </div>
-      <WaitingYou />
+      <Footer />
     </main>
   )
 }
