@@ -12,7 +12,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        src='/videos/first.MOV'
+        src='/videos/first.mp4'
         aria-hidden='true'
       />
       <div className={styles.overlay} aria-hidden='true' />
