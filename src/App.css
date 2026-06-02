@@ -25,6 +25,10 @@ body {
   padding: 0;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background-color: var(--color-cream);
   color: var(--color-brown);
