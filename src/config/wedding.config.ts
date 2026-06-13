@@ -4,11 +4,11 @@ const config = {
     groom: 'Владислав',
   },
   event: {
-    date: '7 вересня 2025',
-    dateShort: '07.09.2025',
+    date: '29 вересня 2026',
+    dateShort: '29.09.2026',
     city: 'Київ',
     preText: 'Запрошуємо вас розділити з нами цей особливий день',
-    weddingDate: '2026-09-07T14:00:00',
+    weddingDate: '2026-09-29T14:00:00',
   },
   waitingYou: {
     photo: '/images/background.webp',
