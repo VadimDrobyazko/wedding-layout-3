@@ -19,7 +19,7 @@
 .units {
   display: flex;
   justify-content: center;
-  gap: clamp(2rem, 6vw, 6rem);
+  gap: clamp(1rem, 3vw, 3rem);
   flex-wrap: nowrap;
 }
 
