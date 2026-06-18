@@ -129,14 +129,14 @@
 }
 
 .eventName {
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   font-weight: 500;
   color: var(--color-brown);
   letter-spacing: 0.02em;
 }
 
 .sub {
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
   color: var(--color-brown-light);
   letter-spacing: 0.02em;
   opacity: 0.75;
